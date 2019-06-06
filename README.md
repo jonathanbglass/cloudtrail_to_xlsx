@@ -16,5 +16,6 @@ I'm going to:
 2. Provide the path to the log files in a globular way:
 * `AWSLogs/*/CloudTrail/*/*/*/*/*gz`
 3. Provide an output filename
-* `python3.7 cloudtrail_to_xlsx.py -r myResults.xlsx [-v] "AWSLogs/*/CloudTrail/*/*/*/*/*gz"
+* `python3.7 cloudtrail_to_xlsx.py -r myResults.xlsx [-v] "AWSLogs/*/CloudTrail/*/*/*/*/*gz"`
 4. You can filter by regions/date parts/account numbers by updating the path
+* `python3.7 cloudtrail_to_xlsx.py -r myResults.xlsx [-v] "AWSLogs/*/CloudTrail/*/2019/06/*/*gz"`
