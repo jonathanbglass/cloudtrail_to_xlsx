@@ -23,11 +23,12 @@ Provide a results file name
 
 
 parser = argparse.ArgumentParser(description='Parse CloudTrail JSON files.')
-parser.add_argument('-r', '--resultfile',
-                    metavar="path", type=str,
-                    help='file to write logs to. a .csv extension will create a CSV file. .xlsx or no extension will generate a .xlsx file.')
+parser.add_argument('-r', '--resultfile', type=str,
+                    help=('Result File.  A ".csv" extension will create'
+                          'a CSV file. An ".xlsx" or no extension will'
+                          ' generate an .xlsx file.'))
 parser.add_argument('jsfile', metavar="path", type=str,
-                    help='JSON file(s) to be analyzed. Expects a glob: AWSLogs/*/CloudTrail/*/*/*/*/*gz')
+                    help='JSON file(s) to be analyzed. Expects a glob: "AWSLogs/*/CloudTrail/*/*/*/*/*gz"')
 parser.add_argument('--verbose', '-v', action='count')
 args = parser.parse_args()
 
