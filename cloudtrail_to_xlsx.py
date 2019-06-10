@@ -95,6 +95,9 @@ if (resFileExt == ".csv"):
     logging.debug('Inside if extension == csv')
 else:
     logging.debug('Inside if extension false')
-    myDf.to_excel(resultfile, index=False, sheet_name='RawCloudTrailLogs')
+    writer = pd.ExcelWriter(resultfile, engine='xlsxwriter')
+    myDf.to_excel(writer, sheet_name='RawCloudTrailLogs', index=False)
+    print("Dangerous DF empty? {}".format(dangerousDf.empty))
     if not dangerousDf.empty:
-        dangerousDf.to_excel(resultfile, index=False, sheet_name='DangerCalls')
+        dangerousDf.to_excel(writer, sheet_name='DangerousCalls', index=False)
+    writer.save()
